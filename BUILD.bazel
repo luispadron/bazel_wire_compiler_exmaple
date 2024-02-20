@@ -1,0 +1,12 @@
+exports_files([
+    "maven_install.json"
+])
+
+java_binary(
+    name = "WireCompiler",
+    main_class = "com.squareup.wire.WireCompiler",
+    runtime_deps = [
+        "@maven//:com_squareup_wire_wire_compiler",
+    ],
+    visibility = ["//Tools:__subpackages__"],
+)

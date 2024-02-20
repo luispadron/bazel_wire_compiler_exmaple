@@ -1,0 +1,18 @@
+load("@rules_jvm_external//:defs.bzl", "maven_install")
+
+# To update maven_install.json, run this command to re-pin the unpinned repository:
+# bazel run @unpinned_maven//:pin
+maven_install(
+    artifacts = [
+        "com.squareup.wire:wire-compiler:4.9.7",
+    ],
+    maven_install_json = "@//:maven_install.json",
+    repositories = [
+        "https://plugins.gradle.org/m2"
+    ],
+    version_conflict_policy = "pinned",
+)
+
+load("@maven//:defs.bzl", "pinned_maven_install")
+
+pinned_maven_install()

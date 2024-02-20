@@ -1,0 +1,10 @@
+syntax = "proto3";
+package example.wire.echo;
+
+/* This proto is modeled against Cash Sync Entity and used as a data model across Echo Clients and Echo App. */
+message EchoSyncEntity {
+  optional string entityId = 1;
+  optional int64 version = 2;
+  optional string type = 3;
+  optional string value = 4;
+}
